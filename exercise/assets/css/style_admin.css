@@ -1,0 +1,33 @@
+.no-skin {
+	font-family: "Arial", Times, serif;
+}
+.table{
+	border-spacing: 1px soild black;
+}
+.table tr td{
+	text-align: center;
+}
+.table tr th{
+	background-color: #BEBEBE;
+	text-align: center;
+}
+.exercise_edit {
+	font-size: 15px; 
+	padding: 5px 10px 5px 10px;
+}
+.create {
+	margin-top: 10px;
+}
+.add {
+	margin-top: 5px;
+}
+.btncreate {
+	color: #000099;
+	padding: 5px;
+	font-family: "Arial", Times, serif;
+}
+.btnadd {
+	color: #000099;
+	padding: 5px;
+	font-family: "Arial", Times, serif;
+}
