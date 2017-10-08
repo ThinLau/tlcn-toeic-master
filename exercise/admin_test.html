@@ -252,14 +252,16 @@
                 <th>Kiểm tra đề thi</th>
                 <th>Xóa đề thi</th>
               </tr>
-              <tr>
-                <td>1</td>
+              <td>1</td>
                 <td>Đề thi 1</td>
                 <td>123.jpg</td>
-                <td><a href="#" class="exercise_edit btn-info" >
+                <td><a href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myfile">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a style="margin-left: 5px" href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myquestion">
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a></td>
-                <td><a href="#" class="exercise_edit btn-success" >
+                <td><a href="#" class="exercise_edit btn-success">
                       <span class=" glyphicon glyphicon-ok"></span>
                     </a></td>
                 <td><a href="#" class="exercise_edit btn-danger">
@@ -270,10 +272,13 @@
                 <td>2</td>
                 <td>Đề thi 2</td>
                 <td>123.jpg</td>
-                <td><a href="#" class="exercise_edit btn-info" >
+                <td><a href="#" class="exercise_edit btn-info modal-sm" data-toggle="modal" data-target="#myfile">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a style="margin-left: 5px" href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myquestion">
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a></td>
-                <td><a href="#" class="exercise_edit btn-success" >
+                <td><a href="#" class="exercise_edit btn-success">
                       <span class=" glyphicon glyphicon-ok"></span>
                     </a></td>
                 <td><a href="#" class="exercise_edit btn-danger">
@@ -281,13 +286,132 @@
                     </a></td>
               </tr>
             </table>
-            <div class="create">
-              <button class="btncreate btn-success"><strong>Tạo đề thi mới</strong></button>
+            <div class="create" >
+              <button class="btncreate btn-success" data-toggle="modal" data-target="#myexercise"><strong>Tạo bài tập mới</strong></button>
             </div>
             <div class="add">
-              <button class=" btnadd btn-success"><strong>Thêm file ảnh và audio cho đề thi</strong></button>
+              <button class=" btnadd btn-success" data-toggle="modal" data-target="#myaudio"><strong>Thêm file ảnh và audio cho bài tập</strong></button>
             </div>
-            
+
+             <!-- Modal input file -->
+            <div class="modal fade" id="myfile" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">File exel</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Thêm file: </h5>
+                    <input class="form-control" type="file" name="" />
+                    <button class="btnfile btn-danger" type="submit">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
+
+            <!-- Modal input question -->
+            <div class="modal fade" id="myquestion" role="dialog">
+              <div class="modal-dialog modal-md">
+                                
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Question</h4>
+                  </div>
+                  <div class="modal-body">
+                    <strong style="font-size: 15px;">Câu hỏi:</strong>
+                    <textarea class="form-control" type="text" rows="4" placeholder="Nhập câu hỏi:"></textarea>
+                    <table style="margin-top: 10px; border-collapse: separate">
+                      <thead>
+                        <tr>
+                          <th style="width: 15%">A</th>
+                          <td><input class="form-control" size="40" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">B</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">C</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">D</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div style="margin-top: 15px;">
+                      <strong style="font-size: 15px;">Đáp án:</strong>
+                      <input class="" type="text" name="">
+                      <input style="margin-top: 10px;"" class="form-control" type="text" name="" value="Câu trả lời">
+                    </div>
+                    <button class="btnfile btn-danger" type="submit">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
+
+            <!-- Modal create exerxise name -->
+            <div class="modal fade" id="myexercise" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Tạo Bài tập mới</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Tên bài tập: </h5>
+                    <input class="form-control" type="text" name="" />
+                    <br>
+                    <h5>Ảnh địa diện cho Bài tập: </h5>
+                    <input class="form-control" type="file" name="" />
+                    <button class="btnfile btn-danger" type="submit" data-toggle="modal" data-target="#myimage">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
+
+             <!-- Modal input audio -->
+            <div class="modal fade" id="myaudio" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Thêm Image hoặc Audio</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Thêm file: </h5>
+                    <input class="form-control" type="file" name="" />
+                    <button class="btnfile btn-danger" type="submit">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
 
           </div><!-- /.page-content -->
         </div>

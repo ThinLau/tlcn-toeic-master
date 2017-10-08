@@ -28,7 +28,8 @@
     <link rel="stylesheet" href="../exercise/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="../exercise/assets/css/ace-rtl.min.css" />
 
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- ace settings handler -->
     <script src="../exercise/assets/js/ace-extra.min.js"></script>
@@ -255,7 +256,10 @@
                 <td>1</td>
                 <td>Bài tập 1</td>
                 <td>123.jpg</td>
-                <td><a href="#" class="exercise_edit btn-info">
+                <td><a href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myfile">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a style="margin-left: 5px" href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myquestion">
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a></td>
                 <td><a href="#" class="exercise_edit btn-success">
@@ -269,7 +273,10 @@
                 <td>2</td>
                 <td>Bài tập 2</td>
                 <td>123.jpg</td>
-                <td><a href="#" class="exercise_edit btn-info">
+                <td><a href="#" class="exercise_edit btn-info modal-sm" data-toggle="modal" data-target="#myfile">
+                      <span class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a style="margin-left: 5px" href="#" class="exercise_edit btn-info" data-toggle="modal" data-target="#myquestion">
                       <span class="glyphicon glyphicon-pencil"></span>
                     </a></td>
                 <td><a href="#" class="exercise_edit btn-success">
@@ -280,17 +287,107 @@
                     </a></td>
               </tr>
             </table>
-            <div class="create">
+            <div class="create" data-toggle="modal" data-target="#myexercise">
               <button class="btncreate btn-success"><strong>Tạo bài tập mới</strong></button>
             </div>
 
-            <div class="row">
-              <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
+             <!-- Modal input file -->
+            <div class="modal fade" id="myfile" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">File exel</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Thêm file: </h5>
+                    <input class="form-control" type="file" name="" />
+                    <button class="btnfile btn-danger" type="submit">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
 
-                <!-- PAGE CONTENT ENDS -->
-              </div><!-- /.col -->
-            </div><!-- /.row -->
+            <!-- Modal input question -->
+            <div class="modal fade" id="myquestion" role="dialog">
+              <div class="modal-dialog modal-md">
+                                
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Question</h4>
+                  </div>
+                  <div class="modal-body">
+                    <strong style="font-size: 15px;">Câu hỏi:</strong>
+                    <textarea class="form-control" type="text" rows="4" placeholder="Nhập câu hỏi:"></textarea>
+                    <table style="margin-top: 10px; border-collapse: separate">
+                      <thead>
+                        <tr>
+                          <th style="width: 15%">A</th>
+                          <td><input class="form-control" size="40" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">B</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">C</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                        <tr>
+                          <th style="width: 15%">D</th>
+                          <td><input class="form-control" type="text" name=""></td>
+                        </tr>
+                      </thead>
+                    </table>
+                    <div style="margin-top: 15px;">
+                      <strong style="font-size: 15px;">Đáp án:</strong>
+                      <input class="" type="text" name="">
+                      <input style="margin-top: 10px;"" class="form-control" type="text" name="" value="Câu trả lời">
+                    </div>
+                    <button class="btnfile btn-danger" type="submit">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
+
+            <!-- Modal create exerxise name -->
+            <div class="modal fade" id="myexercise" role="dialog">
+              <div class="modal-dialog">
+              
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Tạo Bài tập mới</h4>
+                  </div>
+                  <div class="modal-body">
+                    <h5>Tên bài tập: </h5>
+                    <input class="form-control" type="text" name="" />
+                    <br>
+                    <h5>Ảnh địa diện cho Bài tập: </h5>
+                    <input class="form-control" type="file" name="" />
+                    <button class="btnfile btn-danger" type="submit" data-toggle="modal" data-target="#myimage">Lưu</button>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div><!--  end Modal content -->
+                
+              </div>
+            </div> <!-- end Modal -->
+
 
           </div><!-- /.page-content -->
         </div>
@@ -307,7 +404,7 @@
             <!-- <span class="action-buttons">
               <a href="#">
                 <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-              </a>
+              </a>          
 
               <a href="#">
                 <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
